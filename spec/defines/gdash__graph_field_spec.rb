@@ -21,4 +21,21 @@ describe 'gdash::graph_field' do
         with_content(/:derivative => false/)
     }
   end
+  context 'with derivative =>' do
+    let(:title) {'xyz-foo'}
+    let(:params) {
+      {
+        :graph => 'test',
+        :dashboard => 'd',
+        :dashboard_group => 'g',
+        :field_name => 'foo',
+        :data       => 'sumSeries(*.load.load)',
+        :derivative => true,
+      }
+    }
+    it {
+      should contain_concat__fragment('xyz-foo').
+        with_content(/:derivative => true/)
+    }
+  end
 end 
