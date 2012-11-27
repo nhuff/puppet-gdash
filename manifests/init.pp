@@ -5,7 +5,7 @@ class gdash(
 ){
   include gdash::params
 
-  package{'gdash': ensure => 'latest'}
+  package{'rubygem-gdash': ensure => 'latest'}
 
   file{$gdash::params::dashboard_dir:
     ensure  => 'directory',
