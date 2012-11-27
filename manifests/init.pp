@@ -11,6 +11,7 @@ class gdash(
     ensure  => 'directory',
     recurse => true,
     purge   => true,
+    force   => true,
   }
 
   file{"${gdash::params::app_root}/gdash.yaml":
