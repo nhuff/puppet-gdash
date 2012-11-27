@@ -4,6 +4,12 @@ define gdash::dashboard(
   $group,
 ) {
   $dashboard_dir = "${gdash::params::dashboard_dir}/${group}/${title}"
+  file{$dashboard_dir:
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
   file{"${dashboard_dir}/dash.yaml":
     ensure  => 'file',
     owner   => 'root',
