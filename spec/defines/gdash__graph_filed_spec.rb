@@ -17,7 +17,8 @@ describe 'gdash::graph_field' do
       should contain_concat__fragment('xyz-foo').
         with_target('/usr/share/gdash/templates/g/d/test.graph').
         with_content(/field :foo/).
-        with_content(/:data => "sumSeries\(\*\.load.load\)"/)
+        with_content(/:data => "sumSeries\(\*\.load.load\)"/).
+        with_content(/:derivative => false/)
     }
   end
 end 

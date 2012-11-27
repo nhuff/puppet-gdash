@@ -4,7 +4,7 @@ define gdash::graph(
   $description,
   $dashboard_group,
   $dashboard,
-  $area=':none',
+  $area='none',
 ) {
   include concat::setup
   include gdash::params
