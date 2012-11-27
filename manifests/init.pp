@@ -19,6 +19,7 @@ class gdash(
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => template('gdash/gdash.erb')
+    content => template('gdash/gdash.erb'),
+    require => Package['rubygem-gdash'],
   }
 }
