@@ -12,6 +12,7 @@ class gdash(
     recurse => true,
     purge   => true,
     force   => true,
+    require => Package['rubygem-gdash'],
   }
 
   file{"${gdash::params::app_root}/gdash.yaml":
