@@ -3,3 +3,15 @@
 :templatedir: <%= scope.lookupvar('gdash::params::dashboard_dir') %>
 :options:
   :title: <%= @desc %>
+  :interval_filters:
+    - :label: Last Hour
+      :from: -1hour
+      :to: now
+    - :label: Last Day
+      :from: -1day
+    - :label: Last Week
+      :from: -1week
+    - :label: Last Month
+      :from: -1month
+    - :label: Last Year
+      :from: -1year
