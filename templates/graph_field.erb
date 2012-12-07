@@ -1,4 +1,11 @@
+<%
+  options = []
+  options << ":data => \"#{@data}\""
+  options << ":derivative => #{@r_derivative}"
+  options << ":line => #{@r_line}"
+  if @scale_to_seconds
+    options << ":scale_to_seconds =>  #{@scale_to_seconds}"
+  end
+-%>
 
-field :<%= @field_name %>,
-  :data => "<%= @data %>",
-  :derivative => <%= @r_derivative %>
+field :<%= @field_name %>, <%= options.join(',') %>
